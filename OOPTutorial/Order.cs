@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace OOPTutorial
@@ -9,6 +10,7 @@ namespace OOPTutorial
     public List<Dish> dishes { get; set; }
     public double tipPercent { get; set; }
 
+    List<Ingredient> listOfIngredients = new List<Ingredient> { };
     public Order(List<Dish> dishes, double tipPercent)
     {
       this.dishes = dishes;     
@@ -69,7 +71,30 @@ namespace OOPTutorial
       receipt += "Thank you";
       return receipt;
     }
+ 
+    public List<Ingredient> getAllIngredients()
+    {
+    
+      foreach (var dish in dishes)
+      {
+        listOfIngredients.AddRange(dish.recipe);
+        //listOfIngredients.Concat(dish.recipe).ToList();
 
+      }
+    
+      return listOfIngredients;
+    }
+
+    public void getNumOfOccurences()
+    {
+      var group = listOfIngredients.GroupBy(i => i);
+      foreach (var occurence in group)
+      {
+        Console.WriteLine("{0} {1}", occurence.Key, occurence.Count());
+      }
+    }
+    
+   
 
   }
 }

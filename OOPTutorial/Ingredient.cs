@@ -4,13 +4,13 @@ using System.Text;
 
 namespace OOPTutorial
 {
-  public class Dish 
+  public class Ingredient
   {
     public string name { get; set; }
-    public Chef chef { get; set; }
-    public int price { get; set;}
-    public List<Ingredient> recipe { get; set; }
 
-   
+    public override string ToString()
+    {
+      return name;
+    }
   }
 }

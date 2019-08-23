@@ -5,10 +5,6 @@ using System.Text;
 namespace OOPTutorial
 {
   public class Chef :Stuff
-  {
-
-  
-    
-
+  {    
   }
 }

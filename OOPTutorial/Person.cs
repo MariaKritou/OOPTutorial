@@ -14,5 +14,9 @@ namespace OOPTutorial
       string fullName = $"{name} {surname}";
       return fullName;
     }
+    public override string ToString()
+    {
+      return getFullName();
+    }
   }
 }
